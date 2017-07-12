@@ -27,7 +27,7 @@ function mainController($scope, $http) {
 
   // Función para editar los datos de una persona
   $scope.modificarPersona = function(newPersona) {
-    $http.put('/api/persona' + $scope.newPersona._id, $scope.newPersona).success(function(data) {
+    $http.put('/api/persona/' + $scope.newPersona._id, $scope.newPersona).success(function(data) {
       $scope.newPersona = {}; // Borramos toda la información del formulario
       $scope.personas = data; // Al modificar una persona se devuelven todas las personas
       $scope.selected = false;
